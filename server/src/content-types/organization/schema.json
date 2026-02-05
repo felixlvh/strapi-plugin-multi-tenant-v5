@@ -50,6 +50,22 @@
       "type": "integer",
       "private": false
     },
+    "apiKey": {
+      "type": "string",
+      "private": true
+    },
+    "contentTypeDefinitions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::content-type-definition.content-type-definition",
+      "mappedBy": "organization"
+    },
+    "contentEntries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::content-entry.content-entry",
+      "mappedBy": "organization"
+    },
     "isActive": {
       "type": "boolean",
       "default": true
