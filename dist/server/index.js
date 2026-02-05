@@ -39,7 +39,14 @@ const info$1 = {
 const options$1 = {
   draftAndPublish: false
 };
-const pluginOptions$1 = {};
+const pluginOptions$1 = {
+  "content-manager": {
+    visible: true
+  },
+  "content-type-builder": {
+    visible: true
+  }
+};
 const attributes$1 = {
   name: {
     type: "string",
@@ -96,7 +103,14 @@ const info = {
 const options = {
   draftAndPublish: false
 };
-const pluginOptions = {};
+const pluginOptions = {
+  "content-manager": {
+    visible: true
+  },
+  "content-type-builder": {
+    visible: true
+  }
+};
 const attributes = {
   name: {
     type: "string",
