@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organizations",
+  "info": {
+    "singularName": "organization",
+    "pluralName": "organizations",
+    "displayName": "Organization",
+    "description": "A tenant organization in the multi-tenant system"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "plan": {
+      "type": "enumeration",
+      "enum": ["free", "starter", "pro", "enterprise"],
+      "default": "free"
+    },
+    "userGroups": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::multi-tenant.user-group",
+      "mappedBy": "organization"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
