@@ -42,6 +42,14 @@
       "target": "plugin::multi-tenant.user-group",
       "mappedBy": "organization"
     },
+    "adminUserId": {
+      "type": "integer",
+      "private": false
+    },
+    "apiUserId": {
+      "type": "integer",
+      "private": false
+    },
     "isActive": {
       "type": "boolean",
       "default": true
