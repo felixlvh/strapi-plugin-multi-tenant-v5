@@ -26,7 +26,7 @@ const index = {
         defaultMessage: "Multi-Tenant"
       },
       Component: async () => {
-        const { App } = await Promise.resolve().then(() => require("../_chunks/App-WaGVEdb_.js"));
+        const { App } = await Promise.resolve().then(() => require("../_chunks/App-_E4wcR8M.js"));
         return App;
       },
       permissions: []

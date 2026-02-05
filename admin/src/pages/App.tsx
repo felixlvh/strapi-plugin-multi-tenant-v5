@@ -1,7 +1,10 @@
 import { Page, Layouts } from '@strapi/strapi/admin';
-import { Box, Typography, Flex, Grid, LinkButton } from '@strapi/design-system';
+import { Box, Typography, Grid, Button } from '@strapi/design-system';
+import { useNavigate } from 'react-router-dom';
 
 const App = () => {
+  const navigate = useNavigate();
+
   return (
     <Layouts.Root>
       <Page.Main>
@@ -30,12 +33,12 @@ const App = () => {
                     Manage your tenant organizations. Each organization can have multiple user groups.
                   </Typography>
                 </Box>
-                <LinkButton 
+                <Button 
                   variant="secondary" 
-                  to="/content-manager/collection-types/plugin::multi-tenant.organization"
+                  onClick={() => navigate('/content-manager/collection-types/plugin::multi-tenant.organization')}
                 >
                   Manage Organizations
-                </LinkButton>
+                </Button>
               </Box>
             </Grid.Item>
 
@@ -52,12 +55,12 @@ const App = () => {
                     Manage user groups within organizations. Assign users to groups for data isolation.
                   </Typography>
                 </Box>
-                <LinkButton 
+                <Button 
                   variant="secondary" 
-                  to="/content-manager/collection-types/plugin::multi-tenant.user-group"
+                  onClick={() => navigate('/content-manager/collection-types/plugin::multi-tenant.user-group')}
                 >
                   Manage User Groups
-                </LinkButton>
+                </Button>
               </Box>
             </Grid.Item>
           </Grid.Root>

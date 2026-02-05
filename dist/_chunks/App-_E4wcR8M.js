@@ -5,6 +5,7 @@ const admin = require("@strapi/strapi/admin");
 const styledComponents = require("styled-components");
 const m$1 = require("react");
 const we$1 = require("react-dom");
+const reactRouterDom = require("react-router-dom");
 function _interopNamespace(e) {
   if (e && e.__esModule) return e;
   const n = Object.create(null, { [Symbol.toStringTag]: { value: "Module" } });
@@ -8971,7 +8972,7 @@ const w1 = ({
   return /* @__PURE__ */ jsxRuntime.jsx("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 32 32", width: 16, height: 16, fill: w, stroke: e, ref: h, ...c, children: /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M28.5 19v7a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 26v-7a1.5 1.5 0 0 1 3 0v6.5h19V19a1.5 1.5 0 1 1 3 0m-13.561 1.061a1.5 1.5 0 0 0 2.125 0l5-5a1.502 1.502 0 1 0-2.125-2.125L17.5 15.375V5a1.5 1.5 0 1 0-3 0v10.375l-2.439-2.436a1.502 1.502 0 1 0-2.125 2.125z" }) });
 };
 m$1.forwardRef(w1);
-const e1$1 = ({
+const e1 = ({
   fill: n = "currentColor",
   stroke: t3,
   ...c
@@ -8981,7 +8982,7 @@ const e1$1 = ({
   } = styledComponents.useTheme(), w = n && n in a ? a[n] : n, e = t3 && t3 in a ? a[t3] : t3;
   return /* @__PURE__ */ jsxRuntime.jsx("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 32 32", width: 16, height: 16, fill: w, stroke: e, ref: h, ...c, children: /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M13.5 7.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0m7 2a2 2 0 1 0 0-4 2 2 0 0 0 0 4m-9 4.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4m9 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-9 8.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4m9 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4" }) });
 };
-m$1.forwardRef(e1$1);
+m$1.forwardRef(e1);
 const o1 = ({
   fill: n = "currentColor",
   stroke: t3,
@@ -57733,7 +57734,8 @@ const vp = styledComponents.styled(T)`
      */
     background-color: #4a4a6a;
   }
-`, e1 = xe(
+`;
+xe(
   ({ disabled: i, ...e }, t3) => /* @__PURE__ */ jsxRuntime.jsx(
     zn,
     {
@@ -59213,6 +59215,7 @@ const Z0 = styledComponents.styled(T)`
   width: 100%;
 `;
 const App = () => {
+  const navigate = reactRouterDom.useNavigate();
   return /* @__PURE__ */ jsxRuntime.jsx(admin.Layouts.Root, { children: /* @__PURE__ */ jsxRuntime.jsxs(admin.Page.Main, { children: [
     /* @__PURE__ */ jsxRuntime.jsx(admin.Page.Title, { children: "Multi-Tenant" }),
     /* @__PURE__ */ jsxRuntime.jsxs(R, { padding: 8, background: "neutral100", children: [
@@ -59230,10 +59233,10 @@ const App = () => {
               /* @__PURE__ */ jsxRuntime.jsx(I, { variant: "delta", as: "h2", children: "🏢 Organizations" }),
               /* @__PURE__ */ jsxRuntime.jsx(R, { paddingTop: 2, paddingBottom: 4, children: /* @__PURE__ */ jsxRuntime.jsx(I, { variant: "omega", textColor: "neutral600", children: "Manage your tenant organizations. Each organization can have multiple user groups." }) }),
               /* @__PURE__ */ jsxRuntime.jsx(
-                e1,
+                zn,
                 {
                   variant: "secondary",
-                  to: "/content-manager/collection-types/plugin::multi-tenant.organization",
+                  onClick: () => navigate("/content-manager/collection-types/plugin::multi-tenant.organization"),
                   children: "Manage Organizations"
                 }
               )
@@ -59251,10 +59254,10 @@ const App = () => {
               /* @__PURE__ */ jsxRuntime.jsx(I, { variant: "delta", as: "h2", children: "👥 User Groups" }),
               /* @__PURE__ */ jsxRuntime.jsx(R, { paddingTop: 2, paddingBottom: 4, children: /* @__PURE__ */ jsxRuntime.jsx(I, { variant: "omega", textColor: "neutral600", children: "Manage user groups within organizations. Assign users to groups for data isolation." }) }),
               /* @__PURE__ */ jsxRuntime.jsx(
-                e1,
+                zn,
                 {
                   variant: "secondary",
-                  to: "/content-manager/collection-types/plugin::multi-tenant.user-group",
+                  onClick: () => navigate("/content-manager/collection-types/plugin::multi-tenant.user-group"),
                   children: "Manage User Groups"
                 }
               )

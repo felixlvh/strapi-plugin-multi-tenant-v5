@@ -5,6 +5,7 @@ import * as m$1 from "react";
 import m__default, { useRef, useEffect, useMemo, useCallback, createElement, useContext, createContext, Fragment, forwardRef, Children, isValidElement, cloneElement, useState, useLayoutEffect, useReducer, useImperativeHandle, startTransition } from "react";
 import * as we$1 from "react-dom";
 import we__default, { flushSync, createPortal } from "react-dom";
+import { useNavigate } from "react-router-dom";
 function $b1b2314f5f9a1d84$export$25bec8c6f54ee79a(callback) {
   const callbackRef = useRef(callback);
   useEffect(() => {
@@ -8952,7 +8953,7 @@ const w1 = ({
   return /* @__PURE__ */ jsx("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 32 32", width: 16, height: 16, fill: w, stroke: e, ref: h, ...c, children: /* @__PURE__ */ jsx("path", { d: "M28.5 19v7a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 26v-7a1.5 1.5 0 0 1 3 0v6.5h19V19a1.5 1.5 0 1 1 3 0m-13.561 1.061a1.5 1.5 0 0 0 2.125 0l5-5a1.502 1.502 0 1 0-2.125-2.125L17.5 15.375V5a1.5 1.5 0 1 0-3 0v10.375l-2.439-2.436a1.502 1.502 0 1 0-2.125 2.125z" }) });
 };
 forwardRef(w1);
-const e1$1 = ({
+const e1 = ({
   fill: n = "currentColor",
   stroke: t3,
   ...c
@@ -8962,7 +8963,7 @@ const e1$1 = ({
   } = useTheme(), w = n && n in a ? a[n] : n, e = t3 && t3 in a ? a[t3] : t3;
   return /* @__PURE__ */ jsx("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 32 32", width: 16, height: 16, fill: w, stroke: e, ref: h, ...c, children: /* @__PURE__ */ jsx("path", { d: "M13.5 7.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0m7 2a2 2 0 1 0 0-4 2 2 0 0 0 0 4m-9 4.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4m9 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-9 8.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4m9 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4" }) });
 };
-forwardRef(e1$1);
+forwardRef(e1);
 const o1 = ({
   fill: n = "currentColor",
   stroke: t3,
@@ -57714,7 +57715,8 @@ const vp = styled(T)`
      */
     background-color: #4a4a6a;
   }
-`, e1 = xe(
+`;
+xe(
   ({ disabled: i, ...e }, t3) => /* @__PURE__ */ jsx(
     zn,
     {
@@ -59194,6 +59196,7 @@ const Z0 = styled(T)`
   width: 100%;
 `;
 const App = () => {
+  const navigate = useNavigate();
   return /* @__PURE__ */ jsx(Layouts.Root, { children: /* @__PURE__ */ jsxs(Page.Main, { children: [
     /* @__PURE__ */ jsx(Page.Title, { children: "Multi-Tenant" }),
     /* @__PURE__ */ jsxs(R, { padding: 8, background: "neutral100", children: [
@@ -59211,10 +59214,10 @@ const App = () => {
               /* @__PURE__ */ jsx(I, { variant: "delta", as: "h2", children: "🏢 Organizations" }),
               /* @__PURE__ */ jsx(R, { paddingTop: 2, paddingBottom: 4, children: /* @__PURE__ */ jsx(I, { variant: "omega", textColor: "neutral600", children: "Manage your tenant organizations. Each organization can have multiple user groups." }) }),
               /* @__PURE__ */ jsx(
-                e1,
+                zn,
                 {
                   variant: "secondary",
-                  to: "/content-manager/collection-types/plugin::multi-tenant.organization",
+                  onClick: () => navigate("/content-manager/collection-types/plugin::multi-tenant.organization"),
                   children: "Manage Organizations"
                 }
               )
@@ -59232,10 +59235,10 @@ const App = () => {
               /* @__PURE__ */ jsx(I, { variant: "delta", as: "h2", children: "👥 User Groups" }),
               /* @__PURE__ */ jsx(R, { paddingTop: 2, paddingBottom: 4, children: /* @__PURE__ */ jsx(I, { variant: "omega", textColor: "neutral600", children: "Manage user groups within organizations. Assign users to groups for data isolation." }) }),
               /* @__PURE__ */ jsx(
-                e1,
+                zn,
                 {
                   variant: "secondary",
-                  to: "/content-manager/collection-types/plugin::multi-tenant.user-group",
+                  onClick: () => navigate("/content-manager/collection-types/plugin::multi-tenant.user-group"),
                   children: "Manage User Groups"
                 }
               )

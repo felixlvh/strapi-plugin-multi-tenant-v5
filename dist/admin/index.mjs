@@ -25,7 +25,7 @@ const index = {
         defaultMessage: "Multi-Tenant"
       },
       Component: async () => {
-        const { App } = await import("../_chunks/App-DeJyyU4l.mjs");
+        const { App } = await import("../_chunks/App-CnIRYDJO.mjs");
         return App;
       },
       permissions: []
